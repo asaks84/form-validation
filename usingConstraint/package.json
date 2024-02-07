@@ -1,0 +1,14 @@
+{
+  "name": "js-validation",
+  "version": "1.0.0",
+  "description": "Form using JS to validate content manually and using scripts",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "asaks",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^5.3.2"
+  }
+}
