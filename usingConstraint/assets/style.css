@@ -1,14 +1,11 @@
 @import url(https://fonts.googleapis.com/css?family=PT+Sans:400,700);
-form {
-
-  
-}
 form > div {
-  position: relative;
-  background: white;
-  border-bottom: 1px solid #ccc;
+  margin: .5rem 0;
 }
-form > div > label {
+form div {
+  position: relative;
+}
+form div > label {
   opacity: 0.3;
   font-weight: bold;
   position: absolute;
@@ -16,73 +13,53 @@ form > div > label {
   left: 20px;
   transition: all 100ms linear;
 }
-form > div > input[type=text],
-form > div > input[type=email],
-form > div > input[type=password] {
+form div > input:not([type=submit]) {
   width: 100%;
   border: 0;
-  padding: 20px 20px 20px 50px;
+  padding: 25px 20px 15px 35px;
   background: #eee;
 }
-form > div > input[type=text]:focus,
-form > div > input[type=email]:focus,
-form > div > input[type=password]:focus {
-  outline: 0;
-  background: white;
-  padding: 25px 20px 15px 50px;
-}
-form > div > input[type=text]:focus + label,
-form > div > input[type=email]:focus + label,
-form > div > input[type=password]:focus + label {
+form div > input:not([type=submit]):focus {
+  outline: 1px rgb(24, 4, 207) solid;
+  background:  #eeeeee80;
+  }
+form div > input:not([type=submit]):focus + label {
   font-size: 0.75rem;
   top: 5px;
   left: 5px;
 }
-form > div > input[type=text]:valid:not(:empty),
-form > div > input[type=email]:valid:not(:empty),
-form > div > input[type=password]:valid:not(:empty) {
-  background: url("https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Google_Material_Design_check.svg/240px-Google_Material_Design_check.svg.png");
+form div > input:not([type=submit]):valid:not(:placeholder-shown) {
+  background:  #eeeeee80 url("https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Google_Material_Design_check.svg/240px-Google_Material_Design_check.svg.png");
   background-size: 20px;
   background-repeat: no-repeat;
-  background-position: 20px 20px;
+  background-position: 10px 28px;
+  /* padding: 25px 20px 15px 50px; */
 }
-form > div > input[type=text]:valid:not(:empty) + label,
-form > div > input[type=email]:valid:not(:empty) + label,
-form > div > input[type=password]:valid:not(:empty) + label {
+form div > input:not([type=submit]):valid:not(:placeholder-shown) + label {
   font-size: 0.75rem;
   top: 5px;
   left: 5px;
 }
-form > div > input[type=text]:invalid:not(:focus):not(:placeholder-shown),
-form > div > input[type=email]:invalid:not(:focus):not(:placeholder-shown),
-form > div > input[type=password]:invalid:not(:focus):not(:placeholder-shown) {
+form div > input:not([type=submit]):invalid:not(:focus):not(:placeholder-shown) {
   background: pink;
 }
-form > div > input[type=text]:invalid:not(:focus):not(:placeholder-shown) + label,
-form > div > input[type=email]:invalid:not(:focus):not(:placeholder-shown) + label,
-form > div > input[type=password]:invalid:not(:focus):not(:placeholder-shown) + label {
+form div > input:not([type=submit]):invalid:not(:focus):not(:placeholder-shown) + label {
   font-size: 0.75rem;
   top: 5px;
   left: 5px;
 }
-form > div > input[type=text].empty,
-form > div > input[type=email].empty,
-form > div > input[type=password].empty {
+form div > input:not([type=submit]).empty {
   background-color: white;
 }
-form > div > input[type=text].invalid ~ .error,
-form > div > input[type=email].invalid ~ .error,
-form > div > input[type=password].invalid ~ .error {
+form div > input:not([type=submit]).invalid ~ .error {
   max-height: 200px;
   padding: 0 30px 20px 50px;
 }
-form > div > input[type=text]:invalid:focus:not(:placeholder-shown) ~ .error,
-form > div > input[type=email]:invalid:focus:not(:placeholder-shown) ~ .error,
-form > div > input[type=password]:invalid:focus:not(:placeholder-shown) ~ .error {
+form div > input:not([type=submit]):invalid:focus:not(:placeholder-shown) ~ .error {
   max-height: 200px;
   padding: 0 30px 20px 50px;
 }
-form > div .error {
+form  div > .error {
   padding: 0 30px 0 50px;
   color: #999;
   max-height: 0;
@@ -100,8 +77,4 @@ form input[type=submit] {
   border: 0;
   padding: 20px;
   font-size: 1.2rem;
-}
-
-* {
-  box-sizing: border-box;
 }
