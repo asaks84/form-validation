@@ -18,7 +18,4 @@ The form doesn’t need to submit, but you should give an error message if the b
 
 #### Solutions
 
-```
- **Validation with HTML pattern**
-
- ```
+>>  **Validation with HTML pattern**

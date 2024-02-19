@@ -2,8 +2,6 @@ const form = document.getElementsByTagName("form")[0];
 
 const inputs = form.querySelectorAll('input:not([type="submit"])');
 
-// const regEx =
-//  /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
 const errors = {
   'empty': "Field cannot be empty",
