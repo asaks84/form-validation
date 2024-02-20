@@ -20,23 +20,23 @@
     <div class="min-vh-100 h-100 row g-0">
       <div class="col d-none d-md-flex"></div>
 
-      <div class="col-md-8 p-1">
+      <div class="col-md-8">
         <!-- the important content is here -->
-        <form action="#0">
+        <form action="#0" class="p-2">
 
           <h5>Dados Pessoais</h5>
 
-          <div class="col-4">
-            <input type="text" id="cpf" name="cpf" pattern="[0-9]{3}.[0-9]{3}.[0-9]{3}-[0-9]{2}" required
+          <div class="col-6">
+            <input type="text" id="doc" name="doc" pattern="[0-9]{3}.[0-9]{3}.[0-9]{3}-[0-9]{2}|[0-9]{2}.[0-9]{3}.[0-9]{3}/[0-9]{4}-[0-9]{2}" required
               placeholder=" " inputmode="numeric" />
-            <label for="cpf">CPF *</label>
+            <label for="doc">CPF ou CNPJ</label>
             <div class="error"></div>
           </div>
 
           <div>
             <input type="text" id="name" name="name" required placeholder=" "
               pattern="^[a-zA-Z0-9ñÑáéíóúüãõê\-_çÇ& ]+(\s[a-zA-Z0-9ñÑáéíóúüãõê\-_çÇ& ]+){1,5}$" />
-            <label for="name">Nome Completo *</label>
+            <label for="name">Nome Completo</label>
             <div class="error"></div>
           </div>
 
@@ -44,48 +44,48 @@
             <input type="email" id="email" name="email"
               pattern="(?!(^[.-].*|[^@]*\.@|.*\.{2,}.*)|^.{254}.)([a-zA-Z0-9!#$%&'*+\/=?^_`{|}~.-]+@)(?!-.*|.*-\.)([a-zA-Z0-9-]{1,63}\.)+[a-zA-Z]{2,15}"
               min="10" max="11" required placeholder=" " />
-            <label for="email">Email *</label>
+            <label for="email">Email</label>
             <div class="error"></div>
           </div>
           
-          <div class="row g-0 gap-3 ">
-            <div class="col-4">
+          <div class="row g-0 gap-2">
+            <div class="col col-md-4">
               <input type="text" id="phone" name="phone" pattern="(\([0-9]{2}\))+([9]{1})?([0-9]{4,5}).([0-9]{4})" required
                 placeholder=" " inputmode="numeric" />
-              <label for="phone">Telefone *</label>
+              <label for="phone">Telefone</label>
               <div class="error"></div>
             </div>
   
-            <div class="col-4">
-              <input type="text" id="cel" name="cel" pattern="(\([0-9]{2}\))+([9]{1})?([0-9]{4,5})-([0-9]{4})" inputmode="numeric" placeholder=" " />
+            <div class="col col-md-4">
+              <input type="text" id="cel" name="cel" pattern="(\([0-9]{2}\))+([9]{1})?([0-9]{4,5}).([0-9]{4})" inputmode="numeric" placeholder=" " />
               <label for="phone">Celular</label>
               <div class="error"></div>
             </div>
           </div>
 
-          <h5>Endereço</h5>
+          <h5 class="mt-2">Endereço</h5>
 
-          <div class="col-4">
+          <div class="col-6">
             <input id="cep" name="cep" type="text" required inputmode="numeric" placeholder=" " />
-            <label for="cep">CEP *</label>
+            <label for="cep">CEP</label>
             <div class="error"></div>
           </div>
 
           <div>
             <input id="endereco" name="endereco" type="text" required inputmode="numeric" placeholder=" " />
-            <label for="endereco">Endereço *</label>
+            <label for="endereco">Endereço</label>
             <div class="error"></div>
           </div>
           
-          <div class="row g-0 gap-3">
-            <div class="col">
+          <div class="row g-0 gap-2">
+            <div class="col-3">
               <input id="numero" name="numero" type="text" required inputmode="numeric" placeholder=" " />
-              <label for="numero">Número *</label>
+              <label for="numero">Nº</label>
               <div class="error"></div>
             </div>
   
-            <div class="col-9">
-              <input id="complemento" name="complemento" type="text" required inputmode="numeric" placeholder=" " />
+            <div class="col-md col-12">
+              <input id="complemento" name="complemento" type="text" placeholder=" " />
               <label for="complemento">Complemento</label>
               <div class="error"></div>
             </div>
@@ -98,7 +98,9 @@
            <div class="error"></div>
           </div> -->
 
-          <input type="submit" value="Cadastrar" />
+          <div class="row g-0 justify-content-end ">
+            <input type="submit" value="Cadastrar" class="btn btn-success" />
+          </div>
 
         </form>
         <!-- end of the important content -->

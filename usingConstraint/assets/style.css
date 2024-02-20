@@ -9,36 +9,46 @@ form div > label {
   opacity: 0.3;
   font-weight: bold;
   position: absolute;
-  top: 22px;
+  top: 20px;
   left: 20px;
   transition: all 100ms linear;
 }
 form div > input:not([type=submit]) {
   width: 100%;
   border: 0;
-  padding: 25px 20px 15px 35px;
+  padding: 25px 20px 15px 30px;
   background: #eee;
 }
+form div > input:not([type=submit]):required ~ label::before {
+  content: '*';
+  font-size: 1rem;
+  font-weight: bold;
+  position: absolute;
+  top: 0;
+  left: -.5rem;
+  color: rgb(230, 0, 0);
+  z-index: 10;
+}
 form div > input:not([type=submit]):focus {
-  outline: 1px rgb(24, 4, 207) solid;
+  outline: 1px rgb(21, 5, 168) solid;
   background:  #eeeeee80;
   }
 form div > input:not([type=submit]):focus + label {
   font-size: 0.75rem;
   top: 5px;
-  left: 5px;
+  left: 15px;
 }
 form div > input:not([type=submit]):valid:not(:placeholder-shown) {
   background:  #eeeeee80 url("https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Google_Material_Design_check.svg/240px-Google_Material_Design_check.svg.png");
   background-size: 20px;
   background-repeat: no-repeat;
-  background-position: 10px 28px;
+  background-position: 5px 28px;
   /* padding: 25px 20px 15px 50px; */
 }
 form div > input:not([type=submit]):valid:not(:placeholder-shown) + label {
   font-size: 0.75rem;
   top: 5px;
-  left: 5px;
+  left: 15px;
 }
 form div > input:not([type=submit]):invalid:not(:focus):not(:placeholder-shown) {
   background: pink;
@@ -46,7 +56,7 @@ form div > input:not([type=submit]):invalid:not(:focus):not(:placeholder-shown) 
 form div > input:not([type=submit]):invalid:not(:focus):not(:placeholder-shown) + label {
   font-size: 0.75rem;
   top: 5px;
-  left: 5px;
+  left: 15px;
 }
 form div > input:not([type=submit]).empty {
   background-color: white;
@@ -69,12 +79,42 @@ form  div > .error {
   font-style: italic;
 }
 form input[type=submit] {
-  display: block;
-  width: 100%;
-  margin: 20px 0;
-  background: #41D873;
-  color: white;
-  border: 0;
-  padding: 20px;
-  font-size: 1.2rem;
+  border-radius: 24px;
+  box-shadow: rgba(0, 0, 0, .2) 0 3px 5px -1px,rgba(0, 0, 0, .14) 0 6px 10px 0,rgba(0, 0, 0, .12) 0 1px 18px 0;
+  box-sizing: border-box;
+  background-color: #27ae60;
+  color: #fff;
+  cursor: pointer;
+  display: inline-flex;
+  fill: currentcolor;
+  font-family: "Google Sans",Roboto,Arial,sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  height: 48px;
+  justify-content: center;
+  letter-spacing: .25px;
+  line-height: normal;
+  max-width: 100%;
+  overflow: visible;
+  padding: 2px 24px;
+  position: relative;
+  text-align: center;
+  text-transform: none;
+  transition: box-shadow 280ms cubic-bezier(.4, 0, .2, 1),opacity 15ms linear 30ms,transform 270ms cubic-bezier(0, 0, .2, 1) 0ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: auto;
+  will-change: transform,opacity;
+}
+form input[type=submit]:hover {
+  background-color: #1e8449;
+  opacity: 1;
+  transform: translateY(0);
+  transition-duration: .35s;
+
+}
+form input[type=submit]:active {
+  transform: translateY(2px);
+  transition-duration: .35s;
 }
