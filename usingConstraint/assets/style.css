@@ -10,7 +10,7 @@ form div > label {
   font-weight: bold;
   position: absolute;
   top: 20px;
-  left: 20px;
+  left: 15px;
   transition: all 100ms linear;
 }
 form div > input:not([type=submit]) {
@@ -45,7 +45,8 @@ form div > input:not([type=submit]):valid:not(:placeholder-shown) {
   background-position: 5px 28px;
   /* padding: 25px 20px 15px 50px; */
 }
-form div > input:not([type=submit]):valid:not(:placeholder-shown) + label {
+form div > input:not([type=submit]):valid:not(:placeholder-shown) + label,
+form div > input:not([type=submit]):disabled:not(:placeholder-shown) + label {
   font-size: 0.75rem;
   top: 5px;
   left: 15px;
@@ -61,22 +62,21 @@ form div > input:not([type=submit]):invalid:not(:focus):not(:placeholder-shown) 
 form div > input:not([type=submit]).empty {
   background-color: white;
 }
-form div > input:not([type=submit]).invalid ~ .error {
-  max-height: 200px;
-  padding: 0 30px 20px 50px;
-}
-form div > input:not([type=submit]):invalid:focus:not(:placeholder-shown) ~ .error {
-  max-height: 200px;
-  padding: 0 30px 20px 50px;
-}
 form  div > .error {
-  padding: 0 30px 0 50px;
-  color: #999;
   max-height: 0;
   transition: 0.28s;
   overflow: hidden;
   color: red;
   font-style: italic;
+}
+form div > input:not([type=submit]).invalid ~ .error {
+  max-height: 200px;
+}
+form div > input:not([type=submit]).invalid:focus ~ .error {
+  color: gray;
+}
+form div > input:not([type=submit]):invalid:focus:not(:placeholder-shown) ~ .error {
+  max-height: 200px;
 }
 form input[type=submit] {
   border-radius: 24px;
@@ -88,7 +88,7 @@ form input[type=submit] {
   display: inline-flex;
   fill: currentcolor;
   font-family: "Google Sans",Roboto,Arial,sans-serif;
-  font-size: 14px;
+  font-size: 1rem;
   font-weight: 500;
   height: 48px;
   justify-content: center;
@@ -117,4 +117,7 @@ form input[type=submit]:hover {
 form input[type=submit]:active {
   transform: translateY(2px);
   transition-duration: .35s;
+}
+body {
+  font-size: 14px;
 }

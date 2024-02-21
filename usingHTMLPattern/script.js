@@ -1,5 +1,4 @@
 const form = document.getElementsByTagName("form")[0];
-
 const inputs = form.querySelectorAll('input:not([type="submit"])');
 
 
@@ -17,14 +16,16 @@ const errors = {
 function verifyField(e) {
   const target = e.target;
 
-  let error = target.nextElementSibling;
-  while (target) {
-    if (error.classList.contains("error")) {
-      third = error;
-      break;
-    }
-    error = error.nextElementSibling;
-  }
+  const error = target.nextElementSibling.nextElementSibling;
+  console.log(error);
+  // while (target) {
+  //   if (error.classList.contains("error")) {
+  //     console.log(error)
+  //     //third = error;
+  //     break;
+  //   }
+  //   error = error.nextElementSibling;
+  // }
 
   if(target.validity.valid){
    error.textContent = '';
