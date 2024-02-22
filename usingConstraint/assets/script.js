@@ -45,6 +45,63 @@ function verifyField(e) {
 inputs.forEach((e) => e.addEventListener("focusout", verifyField));
 inputs.forEach((e) => e.addEventListener("input", verifyField));
 
+// get address from postal code
 (function(){
   cepAutoComplete();
 })();
+
+// mask for specific fields
+
+// formatação campo CPF/CNPJ
+
+const id = document.querySelector("input[name='doc']");
+const phone = document.querySelector("input[name='phone']");
+const cel = document.querySelector("input[name='cel']");
+const cep =document.querySelector("input[name='cep']");
+
+const maskCPF = {
+  mask: [
+    {
+      mask: '000.000.000-00',
+      max: 11
+    },
+    {
+      mask: '00.000.000/0000-00',
+      min: 12
+    }
+  ]  
+};
+const maskPhone = {
+  mask: [
+    {
+      mask: '(00)0000.0000',
+      min: 13
+    },
+    {
+      mask: '(00)00000.0000',
+      max: 14
+    }
+  ]  
+};
+const maskCel = {
+  mask: [
+    {
+      mask: '(00)00000.0000',
+      max: 14
+    }
+  ]  
+};
+const maskCep = {
+  mask: [
+    {
+      mask: '00000-000',
+      max: 19
+    }
+  ]  
+};
+
+
+IMask(id, maskCPF);
+IMask(phone, maskPhone);
+IMask(cel, maskCel);
+IMask(cep, maskCep);
