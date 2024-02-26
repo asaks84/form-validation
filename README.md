@@ -1,4 +1,4 @@
-# Validation Form with JS
+# Validation Form
 
 ### Project With HTML Pattern
 
